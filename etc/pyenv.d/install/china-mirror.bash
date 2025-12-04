@@ -23,7 +23,7 @@ change_to() {
     for DEFINITION_DIR in "${PYTHON_BUILD_DEFINITIONS[@]}"; do
       if [ -f "${DEFINITION_DIR}/${DEFINITION_PATH}" ]; then
         DEFINITION_PATH="${DEFINITION_DIR}/${DEFINITION_PATH}"
-        perl -p -i -e 's!www.python.org/ftp!npm.taobao.org/mirrors!' ${DEFINITION_PATH}
+        perl -p -i -e 's!www.python.org/ftp!mirrors.tuna.tsinghua.edu.cn!' ${DEFINITION_PATH}
         break
       fi
     done
@@ -39,6 +39,6 @@ change_to() {
 
 change_back() {
   if [ ! -f "${ARGUMENTS[0]}" ]; then
-    perl -p -i -e 's!npm.taobao.org/mirrors!www.python.org/ftp!' ${DEFINITION_PATH}
+    perl -p -i -e 's!mirrors.tuna.tsinghua.edu.cn!www.python.org/ftp!' ${DEFINITION_PATH}
   fi
 }
